@@ -43,4 +43,4 @@ echo "URL: http://${HOST}:${PORT}"
 echo "Press Ctrl+C to stop"
 echo ""
 
-python main.py --listen "$HOST" --port "$PORT" $EXTRA_ARGS
+python main.py --listen "$HOST" --port "$PORT" --force-fp16 --enable-manager $EXTRA_ARGS

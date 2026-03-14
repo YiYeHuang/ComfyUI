@@ -53,7 +53,7 @@
   - `aspect_ratio` — 16:9, 9:16, 1:1
   - `negative_prompt`（可选）— 不想要的元素
   - `seed`, `poll_interval`
-- **输出：** `video_path`（保存在 output/），`first_frame`（预览），`status`
+- **输出：** `video_path`（保存在 output/），`first_frame`，`last_frame`（用于连续视频链），`status`
 - **注意：** 视频生成需要 1-3 分钟，节点会自动轮询等待
 
 ### 多图参考用法示例
