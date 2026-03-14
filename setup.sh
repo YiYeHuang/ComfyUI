@@ -37,10 +37,12 @@ pip install -r ComfyUI-Manager/requirements.txt
 # ComfyUI-ReActor — 换脸 (图片+视频)
 [ ! -d "ComfyUI-ReActor" ] && \
     git clone git@github.com:Gourieff/ComfyUI-ReActor.git
-# matplotlib 3.9 在 Python 3.13 上编译失败，先装新版绕过
-pip install "matplotlib>=3.10.0" --only-binary=:all:
+# albumentations 依赖 matplotlib，但 matplotlib 3.9 在 Python 3.13 编译失败
+# ReActor 不需要 matplotlib，所以跳过它，手动装实际需要的依赖
 pip install opencv-python onnxruntime insightface
-pip install -r ComfyUI-ReActor/requirements.txt
+pip install albumentations --no-deps
+pip install scikit-image scikit-learn joblib imgaug qudida
+pip install -r ComfyUI-ReActor/requirements.txt --no-deps
 
 # ComfyUI_IPAdapter_plus — 参考图风格/人脸迁移
 [ ! -d "ComfyUI_IPAdapter_plus" ] && \
