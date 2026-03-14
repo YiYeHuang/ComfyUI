@@ -37,6 +37,8 @@ pip install -r ComfyUI-Manager/requirements.txt
 # ComfyUI-ReActor — 换脸 (图片+视频)
 [ ! -d "ComfyUI-ReActor" ] && \
     git clone git@github.com:Gourieff/ComfyUI-ReActor.git
+# matplotlib 3.9 在 Python 3.13 上编译失败，先装新版绕过
+pip install "matplotlib>=3.10.0" --only-binary=:all:
 pip install opencv-python onnxruntime insightface
 pip install -r ComfyUI-ReActor/requirements.txt
 
