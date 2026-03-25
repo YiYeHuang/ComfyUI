@@ -57,10 +57,19 @@ pip install -r ComfyUI-ReActor/requirements.txt --no-deps
     git clone git@github.com:Kosinkadink/ComfyUI-VideoHelperSuite.git
 pip install -r ComfyUI-VideoHelperSuite/requirements.txt
 
-# ComfyUI-GGUF — GGUF 量化模型加载 (Mac 跑 Wan 14B 必备)
+# ComfyUI-GGUF — GGUF 量化模型加载 (Mac 跑 Wan 14B / Flux 必备)
 [ ! -d "ComfyUI-GGUF" ] && \
     git clone git@github.com:city96/ComfyUI-GGUF.git
 pip install -r ComfyUI-GGUF/requirements.txt
+
+# x-flux-comfyui — Flux ControlNet (XlabsSampler / LoadFluxControlNet)
+[ ! -d "x-flux-comfyui" ] && \
+    git clone git@github.com:XLabs-AI/x-flux-comfyui.git
+
+# comfyui_controlnet_aux — ControlNet 预处理器 (MiDaS Depth / OpenPose / Canny 等)
+[ ! -d "comfyui_controlnet_aux" ] && \
+    git clone git@github.com:Fannovel16/comfyui_controlnet_aux.git
+pip install -r comfyui_controlnet_aux/requirements.txt
 
 cd ..
 
@@ -68,7 +77,7 @@ cd ..
 # 3. 模型目录
 # ============================================
 echo "=== 3. 模型目录 ==="
-mkdir -p models/{checkpoints,diffusion_models,vae,text_encoders,loras,clip_vision,ipadapter,insightface,animatediff_models,controlnet,upscale_models,latent_upscale_models}
+mkdir -p models/{checkpoints,diffusion_models,vae,text_encoders,loras,clip_vision,ipadapter,insightface,animatediff_models,controlnet,upscale_models,latent_upscale_models,xlabs/controlnets}
 
 # ============================================
 # 4. 验证
